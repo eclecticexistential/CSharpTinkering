@@ -5,3 +5,10 @@ C:\Users\Earthling\source\repos\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\IC
 C:\Users\Earthling\source\repos\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.csproj.CoreCompileInputs.cache
 C:\Users\Earthling\source\repos\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.exe
 C:\Users\Earthling\source\repos\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.pdb
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.csprojResolveAssemblyReference.cache
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.csproj.CoreCompileInputs.cache
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.exe
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\obj\Debug\ICodeThereforeIAm.pdb
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\bin\Debug\ICodeThereforeIAm.exe.config
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\bin\Debug\ICodeThereforeIAm.exe
+C:\Users\Earthling\Downloads\C#\ICodeThereforeIAm\ICodeThereforeIAm\bin\Debug\ICodeThereforeIAm.pdb

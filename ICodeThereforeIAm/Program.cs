@@ -10,9 +10,11 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What is your name?");
-            string name = Console.ReadLine();
-            Console.WriteLine("Hello {0}!", name);
+            string op = "WOrds yo!";
+            for (int i = 0; i < op.Length; i++)
+            {
+                Console.WriteLine("Hello {0} : {1}!", i, op[i]);
+            }
             Console.ReadLine();
         }
     }
