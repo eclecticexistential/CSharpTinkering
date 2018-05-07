@@ -10,19 +10,30 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            int secretNumber = rnd.Next(1, 11);
-            int numberGuessed = 0;
+            double num1 = 5;
+            double num2 = 0;
 
-            do
+            try
             {
-                Console.Write("Enter a number between 1-10");
-                numberGuessed = Convert.ToInt32(Console.ReadLine());
-            } while (secretNumber != numberGuessed);
-            {
-                
+                Console.WriteLine("5 / 0 = {0}", DoDivision(num1, num2));
             }
-            Console.WriteLine("You guessed the number!");
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine( "You can't divide by zero.");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.ReadLine();
+        }
+
+        static double DoDivision(double x, double y)
+        {
+            if(y == 0 || x == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            return x / y;
         }
     }
 }
