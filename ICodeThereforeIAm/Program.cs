@@ -10,21 +10,22 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("1+2+3 = {0}", 
-                GetSumMore(1,2,3));
+            CarColor car1 = CarColor.Blue;
+            PaintCar(car1);
             Console.ReadLine();
-            
         }
-
-        static double GetSumMore(params double[] nums)
+        enum CarColor : byte
         {
-            double sum = 0;
-            foreach (int i in nums)
-            {
-                sum += i;
-            }
-            return sum;
+            Orange = 1,
+            Blue,
+            Green,
+            Purple,
+            Red,
+            Yellow
+        }
+        static void PaintCar(CarColor cc)
+        {
+            Console.WriteLine("The car was painted {0} with the code {1}", cc, (int)cc);
         }
     }
 }
