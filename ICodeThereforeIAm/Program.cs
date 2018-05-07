@@ -10,30 +10,21 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-            double num1 = 5;
-            double num2 = 0;
 
-            try
-            {
-                Console.WriteLine("5 / 0 = {0}", DoDivision(num1, num2));
-            }
-            catch(DivideByZeroException ex)
-            {
-                Console.WriteLine( "You can't divide by zero.");
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }
-
+            Console.WriteLine("1+2+3 = {0}", 
+                GetSumMore(1,2,3));
             Console.ReadLine();
+            
         }
 
-        static double DoDivision(double x, double y)
+        static double GetSumMore(params double[] nums)
         {
-            if(y == 0 || x == 0)
+            double sum = 0;
+            foreach (int i in nums)
             {
-                throw new DivideByZeroException();
+                sum += i;
             }
-            return x / y;
+            return sum;
         }
     }
 }
