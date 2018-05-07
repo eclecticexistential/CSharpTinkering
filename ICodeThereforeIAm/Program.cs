@@ -10,17 +10,19 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-            string[] myArgs = Environment.GetCommandLineArgs();
-            Console.WriteLine(string.Join(", ", myArgs));
-            SayHello();
-            Console.ReadLine();
-        }
-        private static void SayHello()
-        {
-            string name = "";
-            Console.Write("What is your name?");
-            name = Console.ReadLine();
-            Console.WriteLine("Greetings {0}!", name);
+            Random rnd = new Random();
+            int secretNumber = rnd.Next(1, 11);
+            int numberGuessed = 0;
+
+            do
+            {
+                Console.Write("Enter a number between 1-10");
+                numberGuessed = Convert.ToInt32(Console.ReadLine());
+            } while (secretNumber != numberGuessed);
+            {
+                
+            }
+            Console.WriteLine("You guessed the number!");
         }
     }
 }
