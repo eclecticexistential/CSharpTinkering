@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ICodeThereforeIAm
 {
@@ -10,32 +6,22 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-            Rectangle rect1;
-            rect1.length = 200;
-            rect1.width = 50;
-            Console.WriteLine("Area of rect1 : {0}", rect1.Area());
+            
+            Animal fox = new Animal()
+            {
+                name = "Red",
+                sound = "Raaw"
+            };
 
-            Rectangle rect2 = new Rectangle(100, 40);
-            rect2 = rect1;
-            rect1.length = 33;
-            Console.WriteLine("Length of rect2 : {0}", rect2.length);
+            fox.name = "Red";
+            fox.sound = "Raaw";
+
+            fox.MakeSound();
+
+            Console.WriteLine("# of Animals : {0}",
+                Animal.GetNumAnimals());
 
             Console.ReadLine();
-        }
-        struct Rectangle
-        {
-            public double length;
-            public double width;
-            public Rectangle(double l = 1, 
-                double w = 1)
-            {
-                length = l;
-                width = w;
-            }
-            public double Area()
-            {
-                return length * width;
-            }
         }
     }
 }
