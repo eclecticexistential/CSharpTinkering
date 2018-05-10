@@ -10,22 +10,32 @@ namespace ICodeThereforeIAm
     {
         static void Main(string[] args)
         {
-            CarColor car1 = CarColor.Blue;
-            PaintCar(car1);
+            Rectangle rect1;
+            rect1.length = 200;
+            rect1.width = 50;
+            Console.WriteLine("Area of rect1 : {0}", rect1.Area());
+
+            Rectangle rect2 = new Rectangle(100, 40);
+            rect2 = rect1;
+            rect1.length = 33;
+            Console.WriteLine("Length of rect2 : {0}", rect2.length);
+
             Console.ReadLine();
         }
-        enum CarColor : byte
+        struct Rectangle
         {
-            Orange = 1,
-            Blue,
-            Green,
-            Purple,
-            Red,
-            Yellow
-        }
-        static void PaintCar(CarColor cc)
-        {
-            Console.WriteLine("The car was painted {0} with the code {1}", cc, (int)cc);
+            public double length;
+            public double width;
+            public Rectangle(double l = 1, 
+                double w = 1)
+            {
+                length = l;
+                width = w;
+            }
+            public double Area()
+            {
+                return length * width;
+            }
         }
     }
 }
