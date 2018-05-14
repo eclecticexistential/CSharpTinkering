@@ -23,7 +23,7 @@ namespace ICodeThereforeIAm
         {
             Random rnd = new Random();
             int chance = rnd.Next(1, 21);
-            int counter = 0;
+            int counter = 1;
             while (chance != 20)
             {
 
