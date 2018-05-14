@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace ICodeThereforeIAm
 {
@@ -10,7 +9,7 @@ namespace ICodeThereforeIAm
             RollAgain();
             Console.WriteLine("Roll again?");
             string ans = Console.ReadLine();
-            Debug.WriteLine($"Option selected: {ans}");
+
             while (ans.ToLower() == "yes")
             {
                 RollAgain();
@@ -23,11 +22,11 @@ namespace ICodeThereforeIAm
         public static void RollAgain()
         {
             Random rnd = new Random();
-            int chance = rnd.Next(0, 21);
+            int chance = rnd.Next(1, 21);
             int counter = 0;
             while (chance != 20)
             {
-                Debug.WriteLine($"New dice roll is: {chance}");
+
                 if (chance <= 10)
                 {
                     counter++;
@@ -36,7 +35,7 @@ namespace ICodeThereforeIAm
                 {
                     counter++;
                 }
-                chance = rnd.Next(0, 21);
+                chance = rnd.Next(1, 21);
             }
             Console.WriteLine($"Congrats You Rolled a Critical after {counter} rolls!");
         }
