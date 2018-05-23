@@ -11,7 +11,7 @@ namespace ICodeThereforeIAm
 
         public static void Menu()
         {
-            Console.WriteLine("1 for Dice Game or 2 for Gladiator");
+            Console.WriteLine("1 for Dice Game or 2 for Gladiator or 3 for Shapes");
             try
             {
                 string choice = Console.ReadLine();
@@ -22,6 +22,10 @@ namespace ICodeThereforeIAm
                 else if (choice == "2")
                 {
                     Gladiator();
+                }
+                else if (choice == "3")
+                {
+                    Shapes();
                 }
             }
             catch (Exception)
@@ -92,6 +96,44 @@ namespace ICodeThereforeIAm
             if (ans.ToLower() == "yes")
             {
                 Gladiator();
+            }
+            else Menu();
+        }
+        public static void Shapes()
+        {
+            Console.WriteLine("Circle radius?");
+            int circRad = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Rectangle length?");
+            int recLen = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Rectangle width?");
+            int recWid = Convert.ToInt32(Console.ReadLine());
+            Shape[] shapes = { new Circle(circRad), new Rectangle(recLen, recWid) };
+
+            foreach(Shape s in shapes)
+            {
+                s.GetInfo();
+                Console.WriteLine("{0} Area : {1:f2}", s.Name, s.Area());
+                Circle testCirc = s as Circle;
+                if(testCirc == null)
+                {
+                    Console.WriteLine("This is not a circle");
+                }
+                if(s is Circle)
+                {
+                    Console.WriteLine("This isn't a rectangle");
+                    Console.WriteLine();
+                    object circ1 = new Circle(4);
+                    Circle circ2 = (Circle)circ1;
+
+                    Console.WriteLine("The {0} Area is {1:f2}", circ2.Name, circ2.Area());
+                }
+            }
+
+            Console.WriteLine("Want to run again?");
+            string ans = Console.ReadLine();
+            if (ans.ToLower() == "yes")
+            {
+                Shapes();
             }
             else Menu();
         }
