@@ -11,37 +11,45 @@ namespace ICodeThereforeIAm
 
         public static void Menu()
         {
-            Console.WriteLine("1 for Dice Game or 2 for Gladiator or 3 for Shapes 4 for Cars 5 for Devices");
+            Console.WriteLine("1 for Dice Game");
+            Console.WriteLine("2 for Gladiator");
+            Console.WriteLine("3 for Shapes");
+            Console.WriteLine("4 for Cars");
+            Console.WriteLine("5 for Devices");
+            Console.WriteLine("0 to exit");
             try
             {
-                string choice = Console.ReadLine();
-                if (choice == "1")
+                int choice = Convert.ToInt32(Console.ReadLine());
+                while (choice != 0)
                 {
-                    DiceGame();
-                }
-                else if (choice == "2")
-                {
-                    Gladiator();
-                }
-                else if (choice == "3")
-                {
-                    Shapes();
-                }
-                else if (choice == "4")
-                {
-                    Cars();
-                }
-                else if (choice == "5")
-                {
-                    Devices();
-                }
+                    if (choice == 1)
+                    {
+                        DiceGame();
+                    }
+                    else if (choice == 2)
+                    {
+                        Gladiator();
+                    }
+                    else if (choice == 3)
+                    {
+                        Shapes();
+                    }
+                    else if (choice == 4)
+                    {
+                        Cars();
+                    }
+                    else if (choice == 5)
+                    {
+                        Devices();
+                    }
+                    else choice = 0;
+                };
+                Console.WriteLine("Goodbye!");
             }
             catch (Exception)
             {
                 Console.WriteLine("That was not a number.");
             }
-
-            Console.WriteLine("Goodbye!");
         }
 
         public static void Cars()
@@ -57,19 +65,32 @@ namespace ICodeThereforeIAm
                 Console.WriteLine($"The {0} can't be driven", buick.Brand);
             }
             Console.ReadLine();
+            Menu();
         }
 
         public static void Devices()
         {
             IElectronicDevice TV = TVRemote.GetDevice();
+            Television tele = new Television()
+            {
+                Volume = 100
+            };
+
+            Console.WriteLine($"Volume is set to the max: {tele.Volume}. How much do you turn it down by?");
+            int amt = Convert.ToInt32(Console.ReadLine());
+            var level = tele.Volume;
+            var chosenLevel = tele.Volume - amt;
+            while(level > chosenLevel)
+            {
+                tele.VolumeDown();
+                level--;
+            }
             PowerButton powBut = new PowerButton(TV);
             powBut.Execute();
             powBut.Undo();
             Console.ReadLine();
         }
         
-        
-
         public static void DiceGame()
         {
             RollAgain();
@@ -82,14 +103,6 @@ namespace ICodeThereforeIAm
                 Console.WriteLine("Roll again?");
                 ans = Console.ReadLine();
             };
-
-            Console.WriteLine("Play Gladiator?");
-            string nav = Console.ReadLine();
-            if(nav.ToLower() == "yes")
-            {
-                Gladiator();
-            }
-            else Console.WriteLine("Goodbye!");
         }
 
         public static void RollAgain()
@@ -131,7 +144,6 @@ namespace ICodeThereforeIAm
             {
                 Gladiator();
             }
-            else Menu();
         }
         public static void Shapes()
         {
@@ -169,7 +181,6 @@ namespace ICodeThereforeIAm
             {
                 Shapes();
             }
-            else Menu();
         }
     }
 }
