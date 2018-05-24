@@ -11,7 +11,7 @@ namespace ICodeThereforeIAm
 
         public static void Menu()
         {
-            Console.WriteLine("1 for Dice Game or 2 for Gladiator or 3 for Shapes");
+            Console.WriteLine("1 for Dice Game or 2 for Gladiator or 3 for Shapes 4 for Cars 5 for Devices");
             try
             {
                 string choice = Console.ReadLine();
@@ -27,6 +27,14 @@ namespace ICodeThereforeIAm
                 {
                     Shapes();
                 }
+                else if (choice == "4")
+                {
+                    Cars();
+                }
+                else if (choice == "5")
+                {
+                    Devices();
+                }
             }
             catch (Exception)
             {
@@ -35,6 +43,32 @@ namespace ICodeThereforeIAm
 
             Console.WriteLine("Goodbye!");
         }
+
+        public static void Cars()
+        {
+            Vehicle buick = new Vehicle("Buick", 4, 160);
+            if(buick is IDrivable)
+            {
+                buick.Move();
+                buick.Stop();
+            }
+            else
+            {
+                Console.WriteLine($"The {0} can't be driven", buick.Brand);
+            }
+            Console.ReadLine();
+        }
+
+        public static void Devices()
+        {
+            IElectronicDevice TV = TVRemote.GetDevice();
+            PowerButton powBut = new PowerButton(TV);
+            powBut.Execute();
+            powBut.Undo();
+            Console.ReadLine();
+        }
+        
+        
 
         public static void DiceGame()
         {
